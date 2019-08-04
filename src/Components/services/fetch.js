@@ -6,9 +6,12 @@ export const fetchPokemons = (url, type, page) =>
       'Content-Type': 'text/html',
     },
   });
-export const fetchSinglePokemon = (urlpokemon, id) =>
-  axios.get(`${urlpokemon}/${id}/`, {
-    headers: {
-      'Content-Type': 'text/html',
+export const fetchSinglePokemon = urlpokemon =>
+  axios.get(
+    { urlpokemon },
+    {
+      headers: {
+        'Content-Type': 'text/html',
+      },
     },
-  });
+  );

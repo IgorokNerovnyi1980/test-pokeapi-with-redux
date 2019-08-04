@@ -11,7 +11,7 @@ class PokemonsList extends Component {
   state = {
     isLoading: false,
     pokemonsList: [],
-    pokemon: [],
+    pokemon: '',
     type: TYPE,
     page: PAGE,
   };
@@ -32,18 +32,28 @@ class PokemonsList extends Component {
   pageUp = () => {
     this.setState(state => ({ page: state.page + 1 }), () => this.runFetch());
   };
+  // onGetUrlPokemon = e => {
+  //   console.log(e.target.value);
+  //   this.setState({ pokemon: e.target.value });
+  // };
 
   render() {
-    const { pokemonsList, page } = this.state;
-    console.log(pokemonsList);
-    console.log(page);
+    const { pokemonsList } = this.state;
+    const { getUrl } = this.props;
+
     return (
       <div className={styles.wrapper}>
         <div className={styles.namesPokemon}>
           {pokemonsList.map(item => (
-            <div key={item.pokemon.url} className={styles.name}>
-              <h3>{item.pokemon.name}</h3>
-            </div>
+            <button
+              key={item.pokemon.url}
+              className={styles.name}
+              type="text"
+              onClick={getUrl}
+              value={item.pokemon.url}
+            >
+              {item.pokemon.name}
+            </button>
           ))}
         </div>
         <div className={styles.btnWrapper}>

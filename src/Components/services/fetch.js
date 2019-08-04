@@ -7,11 +7,8 @@ export const fetchPokemons = (url, type, page) =>
     },
   });
 export const fetchSinglePokemon = urlpokemon =>
-  axios.get(
-    { urlpokemon },
-    {
-      headers: {
-        'Content-Type': 'text/html',
-      },
+  axios.get(urlpokemon, {
+    headers: {
+      'Content-Type': 'text/html',
     },
-  );
+  });

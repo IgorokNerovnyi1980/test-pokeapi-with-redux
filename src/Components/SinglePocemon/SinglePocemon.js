@@ -2,34 +2,41 @@ import React, { Component } from 'react';
 import styles from './SinglePocemon.module.css';
 import { fetchSinglePokemon } from '../services/fetch';
 
-const URLPOKEMON = 'https://pokeapi.co/api/v2/pokemon';
+// const URLPOKEMON = 'https://pokeapi.co/api/v2/pokemon';
 
 class SinglePocemon extends Component {
   state = {
-    sigle: [],
+    url: null,
+    single: {},
     isLoading: false,
   };
-  //   runFetch() {
-  //     this.setState({ isLoading: true });
-  //     fetchSinglePokemon(this.props.url)
-  //       .then(result => this.setState({ sigle: [...result] }))
-  //       .catch(err => console.log(err))
-  //       .finally(() => this.setState({ isLoading: false }));
-  //   }
-  componentDidMount() {
+
+  runFetch() {
     this.setState({ isLoading: true });
     fetchSinglePokemon(this.props.url)
-      .then(result => this.setState({ sigle: [...result] }))
-      .catch(err => console.log(err))
-      .finally(() => this.setState({ isLoading: false }));
+      .then(result => this.setState({ single: { ...result } }))
+      .catch(err => console.log(err));
+    //   .finally(() => this.setState({ isLoading: false }));
+  }
+
+  componentDidUpdate() {
+    // console.log('urlState: ', this.state.url);
+    // console.log('didUpdate prop: ', this.props.url);
+    if (this.state.url === null) {
+      this.setState(prevState => ({ ...prevState, url: this.props.url }));
+      this.runFetch();
+    }
   }
   render() {
-    const { isLoading } = this.state;
+    const { isLoading, single } = this.state;
+    console.log(single.data);
+    // console.log(single.data.name);
+
     return (
       isLoading && (
         <div className={styles.wrapper}>
           <div className={styles.avatarBlock}>
-            <h1>Name pockemon</h1>
+            <h1>Name</h1>
             <img src="" alt="" />
           </div>
 

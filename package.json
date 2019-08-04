@@ -35,7 +35,6 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://IgorokNerovnyi1980.github.io/",
   "devDependencies": {
     "eslint-config-airbnb": "^17.1.1",
     "eslint-config-prettier": "^6.0.0",
@@ -45,5 +44,6 @@
     "eslint-plugin-react": "^7.14.3",
     "prettier": "^1.18.2",
     "prop-types": "^15.7.2"
-  }
+  },
+  "homepage": "https://IgorokNerovnyi1980.github.io/test-pokeapi"
 }

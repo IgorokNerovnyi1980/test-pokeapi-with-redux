@@ -1,14 +1,42 @@
 .wrapper {
-  width: 300px;
-  margin: 30px 30px;
-  padding: 10px;
-  border: 2px solid grey;
+  width: 500px;
+  height: auto;
+  margin: 0.5em;
+  border: 0.2em solid grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.namesPokemon {
+  width: 90%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  vertical-align: middle;
 }
 
-.wrapper h3 {
-  margin-right: 5px;
+.name {
+  width: 30%;
+  height: 5vh;
+  margin-top: 1em;
+  border: 0.1em solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.name h3 {
+  text-align: center;
+}
+
+.btnWrapper {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }

@@ -38,21 +38,23 @@ class PokemonsList extends Component {
     console.log(pokemonsList);
     console.log(page);
     return (
-      <>
-        <div className={styles.wrapper}>
+      <div className={styles.wrapper}>
+        <div className={styles.namesPokemon}>
           {pokemonsList.map(item => (
-            <h3 key={item.pokemon.url} onClick={this.getPokemon}>
-              {item.pokemon.name}
-            </h3>
+            <div key={item.pokemon.url} className={styles.name}>
+              <h3>{item.pokemon.name}</h3>
+            </div>
           ))}
         </div>
-        <button type="button" onClick={this.pageDown}>
-          Назад
-        </button>
-        <button type="button" onClick={this.pageUp}>
-          Вперед
-        </button>
-      </>
+        <div className={styles.btnWrapper}>
+          <button type="button" onClick={this.pageDown}>
+            Назад
+          </button>
+          <button type="button" onClick={this.pageUp}>
+            Вперед
+          </button>
+        </div>
+      </div>
     );
   }
 }

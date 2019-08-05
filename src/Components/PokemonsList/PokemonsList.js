@@ -27,10 +27,16 @@ class PokemonsList extends Component {
     this.runFetch();
   }
   pageDown = () => {
-    this.setState(state => ({ page: state.page - 1 }), () => this.runFetch());
+    this.setState(
+      prevState => ({ page: prevState.page - 1 }),
+      () => this.runFetch(),
+    );
   };
   pageUp = () => {
-    this.setState(state => ({ page: state.page + 1 }), () => this.runFetch());
+    this.setState(
+      prevState => ({ page: prevState.page + 1 }),
+      () => this.runFetch(),
+    );
   };
   // onGetUrlPokemon = e => {
   //   console.log(e.target.value);

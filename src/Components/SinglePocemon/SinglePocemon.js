@@ -10,13 +10,17 @@ class SinglePocemon extends Component {
     single: {},
     isLoading: false,
   };
+  parsingPocemonData() {
+    this.setState(prevState => ({
+      ...prevState,
+      sprites: prevState.single.sprites,
+    }));
+  }
 
   runFetch() {
-    this.setState({ isLoading: true });
     fetchSinglePokemon(this.props.url)
-      .then(result => this.setState({ single: { ...result } }))
+      .then(result => this.setState({ single: { ...result }, isLoading: true }))
       .catch(err => console.log(err));
-    //   .finally(() => this.setState({ isLoading: false }));
   }
 
   componentDidUpdate() {
@@ -25,49 +29,52 @@ class SinglePocemon extends Component {
     if (this.state.url === null) {
       this.setState(prevState => ({ ...prevState, url: this.props.url }));
       this.runFetch();
+      this.parsingPocemonData();
     }
   }
   render() {
     const { isLoading, single } = this.state;
     console.log(single.data);
-    // console.log(single.data.name);
+    const test = single.data;
+    if (test !== undefined) {
+      const name = test.name;
+      const img = test.sprites.front_default;
+      const abilities = test.abilities;
+      console.log(abilities);
+    }
 
-    return (
-      isLoading && (
-        <div className={styles.wrapper}>
-          <div className={styles.avatarBlock}>
-            <h1>Name</h1>
-            <img src="" alt="" />
-          </div>
-
-          <div className={styles.textBlock}>
-            <ul key="1">
-              <h4>Some stats</h4>
-              <li>wer</li>
-              <li>wer</li>
-              <li>wer</li>
-              <li>wer</li>
-              <li>wer</li>
-            </ul>
-            <ul key="2">
-              <h4>Some stats</h4>
-              <li>wer</li>
-              <li>wer</li>
-              <li>wer</li>
-              <li>wer</li>
-              <li>wer</li>
-            </ul>
-            <ul key="3">
-              <h4>Some stats</h4>
-              <li>wer</li>
-              <li>wer</li>
-              <li>wer</li>
-              <li>wer</li>
-              <li>wer</li>
-            </ul>
+    return isLoading === true ? (
+      <div className={styles.wrapper}>
+        <div className={styles.avatarBlock}>
+          <h1>{test.name}</h1>
+          <div className={styles.imgWrapper}>
+            <img src={test.sprites.front_default} alt="" />
           </div>
         </div>
-      )
+
+        <div className={styles.textBlock}>
+          <ul key="1">
+            <h4>Abilities:</h4>
+            {test.abilities.map(item => (
+              <li key={item.ability.name}>
+                <p>{item.ability.name}</p>
+              </li>
+            ))}
+          </ul>
+          <ul key="2">
+            <h4>Stats:</h4>
+            {test.stats.map(item => (
+              <li key={item.stat.name}>
+                <p>
+                  {item.stat.name} - {item.base_stat}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    ) : (
+      <p>Nothing</p>
     );
   }
 }

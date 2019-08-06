@@ -10,20 +10,23 @@ class SinglePocemon extends Component {
   };
 
   runFetch() {
-    fetchSinglePokemon(this.props.url)
+    fetchSinglePokemon(this.state.url)
       .then(result => this.setState({ single: { ...result }, isLoading: true }))
       .catch(err => console.log(err));
   }
 
-  componentDidUpdate() {
-    if (this.state.url !== this.props.url) {
-      this.setState(prevState => ({ ...prevState, url: this.props.url }));
-      this.runFetch();
-    }
+  componentDidMount() {
+    this.setState(
+      {
+        url: `https://pokeapi.co/api/v2/pokemon/${this.props.match.params.id}`,
+      },
+      () => this.runFetch(),
+    );
   }
   render() {
-    const { isLoading, single } = this.state;
-    // console.log(single.data);
+    const { isLoading, single, url } = this.state;
+    console.log('single :', single);
+    console.log('url :', url);
     const pokemonData = single.data;
     if (pokemonData !== undefined) {
       const id = pokemonData.id;

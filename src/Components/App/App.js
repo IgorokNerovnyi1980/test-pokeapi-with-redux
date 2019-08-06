@@ -22,7 +22,7 @@ class App extends Component {
             )}
           />
           <Route
-            path="/pokemon"
+            path="/pokemon/:id"
             render={props => <SinglePocemon {...props} url={pokemon} />}
           />
           <Route render={() => <p>Страница не найдена</p>} />

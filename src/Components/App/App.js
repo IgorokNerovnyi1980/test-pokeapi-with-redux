@@ -1,23 +1,32 @@
 import React, { Component } from 'react';
 import styles from './App.module.css';
-import PokemonsList from '../PokemonsList/PokemonsList';
+import { Route, Switch } from 'react-router-dom';
+import HomePage from '../Home/HomePage';
 import SinglePocemon from '../SinglePocemon/SinglePocemon';
-import TestFetch from '../TestFetch/TestFetch';
 
 class App extends Component {
-  state = {
-    pokemon: '',
-  };
-  onGetUrlPokemon = e => {
+  state = {};
+  getUrlPokemon = e => {
     this.setState({ pokemon: e.target.value });
   };
   render() {
     const { pokemon } = this.state;
     return (
-      <div className={styles.mainWindow}>
-        <PokemonsList getUrl={this.onGetUrlPokemon} />
-        <SinglePocemon url={pokemon} />
-        <TestFetch />
+      <div className={styles.section}>
+        <Switch>
+          <Route
+            path="/"
+            exact
+            render={props => (
+              <HomePage {...props} onGetUrl={this.getUrlPokemon} />
+            )}
+          />
+          <Route
+            path="/pokemon"
+            render={props => <SinglePocemon {...props} url={pokemon} />}
+          />
+          <Route render={() => <p>Страница не найдена</p>} />
+        </Switch>
       </div>
     );
   }

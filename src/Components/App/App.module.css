@@ -5,6 +5,10 @@
   max-width: 1920px;
   min-width: 320px;
   font-family: 'Montserrat', sans-serif;
+  background-color: black;
+  /* background: radial-gradient(ellipse at center, #f9fcf7 0%, #f5f9f0 100%); */
+  /* background: radial-gradient(ellipse at center, #ffffff 0%, #f6f6f6 47%, #ededed 100%); */
+  /* background: radial-gradient(ellipse at center, #eab92d 0%, #c79810 100%); */
 
 }
 
@@ -15,4 +19,9 @@ h4,
 h5,
 h6 {
   font-family: 'Raleway', sans-serif;
+}
+
+.section {
+  width: 65%;
+  margin: 0 auto;
 }

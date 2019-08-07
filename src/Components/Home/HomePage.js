@@ -18,43 +18,48 @@ class HomePage extends Component {
     pokemon: '',
     type: TYPE,
     page: PAGE,
+    url: URL,
   };
 
-  runFetch() {
+  runRequest() {
     this.setState({ isLoading: true });
-    fetchPokemons(URL, this.state.type, this.state.page)
+    fetchPokemons(this.state.url, this.state.type, this.state.page)
       .then(result => this.setState({ pokemonsList: [...result.data.pokemon] }))
       .catch(err => console.log(err))
       .finally(() => this.setState({ isLoading: false }));
   }
 
   componentDidMount() {
-    this.runFetch();
+    this.runRequest();
   }
 
   pageMinus = () => {
     this.setState(
       prevState => ({ page: prevState.page - 1 }),
-      () => this.runFetch(),
+      () => this.runRequest(),
     );
   };
   pagePlus = () => {
     this.setState(
       prevState => ({ page: prevState.page + 1 }),
-      () => this.runFetch(),
+      () => this.runRequest(),
     );
   };
 
   render() {
-    const { page, pokemonsList } = this.state;
-    const { onGetUrl } = this.props;
+    const { page, pokemonsList, isLoading } = this.state;
     return (
       <div className={styles.wrapper}>
         <Title />
-        <PokemonsList pokemonsList={pokemonsList} onGetUrl={onGetUrl} />
+        {!isLoading ? (
+          <PokemonsList pokemonsList={pokemonsList} />
+        ) : (
+          <p>Loading...</p>
+        )}
         <UpDown value={page} onDown={this.pageMinus} onUp={this.pagePlus} />
       </div>
     );
   }
 }
+
 export default HomePage;

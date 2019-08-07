@@ -1,66 +1,73 @@
-.nothing {
+@import url('https://fonts.googleapis.com/css?family=Lato|Libre+Caslon+Text&display=swap');
+
+.Loader {
   margin: 0 auto;
   margin: 0.5em;
 }
 
 .wrapper {
   width: 100%;
-  height: auto;
+  height: 70vh;
   margin: 0.5em;
   border: 0.2em solid grey;
+  border-radius: 0.5em;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.avatarBlock {
-  position: relative;
-  width: 50%;
-  height: 20vh;
-
-
-
-}
-
-.avatarBlock h1 {
-  position: absolute;
-  font-size: 1.5em;
-  font-weight: 800;
-  top: 5%;
-  left: 50%;
-  transform: translate(-50%, -95%);
-
-}
-
 .imgWrapper {
+  width: 60%;
+  height: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.imgWrapper img {
   position: absolute;
-  max-width: none;
   min-width: auto;
   min-height: auto;
-  width: 6.8em;
-  height: 6.8em;
+  width: 90%;
+  max-width: 20em;
+  height: auto;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border: 0.2em solid grey;
+  border-radius: 0.5em;
+
 }
 
 .textBlock {
-  width: 40%;
+  width: 35%;
+  min-height: 30vh;
+}
 
+.textBlock h1 {
+  font-size: 1.8em;
+  font-weight: 800;
+  font-family: 'Libre Caslon Text', serif;
 }
 
 .textBlock ul {
   margin-top: 1em;
-  margin-bottom: 1em;
 }
 
 .textBlock ul h4 {
-  font-weight: 600;
+  font-family: 'Lato', sans-serif;
+  font-weight: 800;
+
 }
 
-.textBlock li {
-  margin-top: 0.2em;
-  padding-left: 0.7em;
-  font-size: 0.8em;
+.abilities li {
+  margin-top: 0.5em;
+  padding-left: 0.5em;
+  font-size: 1em;
+}
+
+.stats li {
+  margin-top: 0.5em;
+  padding-left: 2em;
+  font-size: 1em;
 }

@@ -24,28 +24,24 @@ class SinglePocemon extends Component {
     );
   }
   render() {
-    const { isLoading, single, url } = this.state;
-    console.log('single :', single);
-    console.log('url :', url);
+    const { isLoading, single } = this.state;
+
     const pokemonData = single.data;
-    if (pokemonData !== undefined) {
-      const id = pokemonData.id;
-      // const img = pokemonData.sprites.front_default;
-      // const abilities = pokemonData.abilities;
-      console.log(id);
-    }
+    // if (pokemonData !== undefined) {
+    //   const id = pokemonData.id;
+
+    //   console.log(id);
+    //   console.log(pokemonData);
+    // }
 
     return isLoading === true ? (
       <div className={styles.wrapper}>
-        <div className={styles.avatarBlock}>
-          <h1>{pokemonData.name}</h1>
-          <div className={styles.imgWrapper}>
-            <img src={pokemonData.sprites.front_default} alt="" />
-          </div>
+        <div className={styles.imgWrapper}>
+          <img src={pokemonData.sprites.front_default} alt="" />
         </div>
-
         <div className={styles.textBlock}>
-          <ul key="1">
+          <h1>{pokemonData.name}</h1>
+          <ul key="1" className={styles.abilities}>
             <h4>Abilities:</h4>
             {pokemonData.abilities.map(item => (
               <li key={item.ability.name}>
@@ -53,7 +49,7 @@ class SinglePocemon extends Component {
               </li>
             ))}
           </ul>
-          <ul key="2">
+          <ul key="2" className={styles.stats}>
             <h4>Stats:</h4>
             {pokemonData.stats.map(item => (
               <li key={item.stat.name}>
@@ -66,7 +62,7 @@ class SinglePocemon extends Component {
         </div>
       </div>
     ) : (
-      <p className={styles.nothing}>No Pokemon Information</p>
+      <p className={styles.nothing}>loading...</p>
     );
   }
 }

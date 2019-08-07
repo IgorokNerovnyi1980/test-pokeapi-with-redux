@@ -1,16 +1,14 @@
 import React from 'react';
 import styles from './PokemonsList.module.css';
-import { NavLink } from 'react-router-dom';
-const activeLink = {
-  color: 'red',
-};
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const getId = item => {
   const url = item.pokemon.url.slice(0, -1);
   return url.slice(url.lastIndexOf('/') + 1);
 };
 
-const PokemonsList = ({ onGetUrl, pokemonsList }) => {
+const PokemonsList = ({ pokemonsList }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.namesPokemon}>
@@ -19,18 +17,17 @@ const PokemonsList = ({ onGetUrl, pokemonsList }) => {
             key={item.pokemon.url}
             className={styles.name}
             type="text"
-            onClick={onGetUrl}
             value={item.pokemon.url}
           >
-            {console.log('))', getId(item))}
-            <NavLink to={`/pokemon/${getId(item)}`} activeStile={activeLink}>
-              {item.pokemon.name}
-            </NavLink>
+            <Link to={`/pokemon/${getId(item)}`}>{item.pokemon.name}</Link>
           </button>
         ))}
       </div>
     </div>
   );
+};
+PokemonsList.propTypes = {
+  pokemonsList: PropTypes.array.isRequired,
 };
 
 export default PokemonsList;

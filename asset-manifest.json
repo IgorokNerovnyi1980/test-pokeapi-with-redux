@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/test-pokeapi/static/css/main.08da0c2b.chunk.css",
-    "main.js": "/test-pokeapi/static/js/main.87013f3b.chunk.js",
-    "main.js.map": "/test-pokeapi/static/js/main.87013f3b.chunk.js.map",
+    "main.js": "/test-pokeapi/static/js/main.9b8c3a02.chunk.js",
+    "main.js.map": "/test-pokeapi/static/js/main.9b8c3a02.chunk.js.map",
     "runtime~main.js": "/test-pokeapi/static/js/runtime~main.afde0772.js",
     "runtime~main.js.map": "/test-pokeapi/static/js/runtime~main.afde0772.js.map",
-    "static/js/2.0469a4ee.chunk.js": "/test-pokeapi/static/js/2.0469a4ee.chunk.js",
-    "static/js/2.0469a4ee.chunk.js.map": "/test-pokeapi/static/js/2.0469a4ee.chunk.js.map",
+    "static/js/2.f964895e.chunk.js": "/test-pokeapi/static/js/2.f964895e.chunk.js",
+    "static/js/2.f964895e.chunk.js.map": "/test-pokeapi/static/js/2.f964895e.chunk.js.map",
     "index.html": "/test-pokeapi/index.html",
-    "precache-manifest.810d30997f964626609a41a26eec50e5.js": "/test-pokeapi/precache-manifest.810d30997f964626609a41a26eec50e5.js",
+    "precache-manifest.5fdabf314259440f480927603e77fe77.js": "/test-pokeapi/precache-manifest.5fdabf314259440f480927603e77fe77.js",
     "service-worker.js": "/test-pokeapi/service-worker.js",
     "static/css/main.08da0c2b.chunk.css.map": "/test-pokeapi/static/css/main.08da0c2b.chunk.css.map"
   }

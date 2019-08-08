@@ -33,13 +33,13 @@ class HomePage extends Component {
     this.runRequest();
   }
 
-  pageMinus = () => {
+  pagePrev = () => {
     this.setState(
       prevState => ({ page: prevState.page - 1 }),
       () => this.runRequest(),
     );
   };
-  pagePlus = () => {
+  pageNext = () => {
     this.setState(
       prevState => ({ page: prevState.page + 1 }),
       () => this.runRequest(),
@@ -56,7 +56,7 @@ class HomePage extends Component {
         ) : (
           <p>Loading...</p>
         )}
-        <UpDown value={page} onDown={this.pageMinus} onUp={this.pagePlus} />
+        <UpDown value={page} onDown={this.pagePrev} onUp={this.pageNext} />
       </div>
     );
   }

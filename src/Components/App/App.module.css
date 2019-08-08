@@ -1,12 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway&display=swap');
 
+
+body {
+  background: radial-gradient(ellipse at center, #f9fcf7 0%, #f5f9f0 100%);
+}
+
 .mainWindow {
   width: 100%;
-  max-width: 1920px;
   min-width: 320px;
   font-family: 'Montserrat', sans-serif;
-  background: radial-gradient(ellipse at center, #f9fcf7 0%, #f5f9f0 100%);
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h1,
@@ -20,5 +25,30 @@ h6 {
 
 .section {
   width: 65%;
-  margin: 0 auto;
+
+}
+
+@media (min-width: 960px) and (max-width: 1200px) {
+  .section {
+    width: 80%;
+
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 1060px) {
+  .section {
+    width: 90%;
+
+  }
+}
+
+
+
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .section {
+    width: 95%;
+
+  }
 }

@@ -9,7 +9,7 @@ class SinglePocemon extends Component {
     isLoading: false,
   };
 
-  runFetch() {
+  runRequest() {
     fetchSinglePokemon(this.state.url)
       .then(result => this.setState({ single: { ...result }, isLoading: true }))
       .catch(err => console.log(err));
@@ -20,19 +20,13 @@ class SinglePocemon extends Component {
       {
         url: `https://pokeapi.co/api/v2/pokemon/${this.props.match.params.id}`,
       },
-      () => this.runFetch(),
+      () => this.runRequest(),
     );
   }
   render() {
     const { isLoading, single } = this.state;
 
     const pokemonData = single.data;
-    // if (pokemonData !== undefined) {
-    //   const id = pokemonData.id;
-
-    //   console.log(id);
-    //   console.log(pokemonData);
-    // }
 
     return isLoading === true ? (
       <div className={styles.wrapper}>

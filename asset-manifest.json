@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/test-pokeapi/static/css/main.203707c9.chunk.css",
-    "main.js": "/test-pokeapi/static/js/main.243389f7.chunk.js",
-    "main.js.map": "/test-pokeapi/static/js/main.243389f7.chunk.js.map",
-    "runtime~main.js": "/test-pokeapi/static/js/runtime~main.afde0772.js",
-    "runtime~main.js.map": "/test-pokeapi/static/js/runtime~main.afde0772.js.map",
-    "static/js/2.f964895e.chunk.js": "/test-pokeapi/static/js/2.f964895e.chunk.js",
-    "static/js/2.f964895e.chunk.js.map": "/test-pokeapi/static/js/2.f964895e.chunk.js.map",
-    "index.html": "/test-pokeapi/index.html",
-    "precache-manifest.40535c550bdaf6e223a1e092994a5873.js": "/test-pokeapi/precache-manifest.40535c550bdaf6e223a1e092994a5873.js",
-    "service-worker.js": "/test-pokeapi/service-worker.js",
-    "static/css/main.203707c9.chunk.css.map": "/test-pokeapi/static/css/main.203707c9.chunk.css.map"
+    "main.css": "/test-pokeapi-with-redux/static/css/main.f9b9e1c5.chunk.css",
+    "main.js": "/test-pokeapi-with-redux/static/js/main.f3b25053.chunk.js",
+    "main.js.map": "/test-pokeapi-with-redux/static/js/main.f3b25053.chunk.js.map",
+    "runtime~main.js": "/test-pokeapi-with-redux/static/js/runtime~main.b13b41b4.js",
+    "runtime~main.js.map": "/test-pokeapi-with-redux/static/js/runtime~main.b13b41b4.js.map",
+    "static/js/2.f964895e.chunk.js": "/test-pokeapi-with-redux/static/js/2.f964895e.chunk.js",
+    "static/js/2.f964895e.chunk.js.map": "/test-pokeapi-with-redux/static/js/2.f964895e.chunk.js.map",
+    "index.html": "/test-pokeapi-with-redux/index.html",
+    "precache-manifest.b808095b76e66b728c98ce607da72780.js": "/test-pokeapi-with-redux/precache-manifest.b808095b76e66b728c98ce607da72780.js",
+    "service-worker.js": "/test-pokeapi-with-redux/service-worker.js",
+    "static/css/main.f9b9e1c5.chunk.css.map": "/test-pokeapi-with-redux/static/css/main.f9b9e1c5.chunk.css.map"
   }
 }

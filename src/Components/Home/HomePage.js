@@ -2,28 +2,22 @@ import React, { Component } from 'react';
 import styles from './Home.module.css';
 
 import { fetchPokemons } from '../services/fetch';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import Title from './Title';
 import PokemonsList from '../PokemonsList/PokemonsList';
 import UpDown from '../Controls/UpDown';
 
-const URL = 'https://pokeapi.co/api/v2';
-const TYPE = 'ability';
-const PAGE = 1;
-
 class HomePage extends Component {
   state = {
     isLoading: false,
     pokemonsList: [],
-    pokemon: '',
-    type: TYPE,
-    page: PAGE,
-    url: URL,
   };
 
   runRequest() {
     this.setState({ isLoading: true });
-    fetchPokemons(this.state.url, this.state.type, this.state.page)
+    fetchPokemons(this.props.url, this.props.type, this.props.page)
       .then(result => this.setState({ pokemonsList: [...result.data.pokemon] }))
       .catch(err => console.log(err))
       .finally(() => this.setState({ isLoading: false }));
@@ -33,21 +27,8 @@ class HomePage extends Component {
     this.runRequest();
   }
 
-  pagePrev = () => {
-    this.setState(
-      prevState => ({ page: prevState.page - 1 }),
-      () => this.runRequest(),
-    );
-  };
-  pageNext = () => {
-    this.setState(
-      prevState => ({ page: prevState.page + 1 }),
-      () => this.runRequest(),
-    );
-  };
-
   render() {
-    const { page, pokemonsList, isLoading } = this.state;
+    const { pokemonsList, isLoading } = this.state;
     return (
       <div className={styles.wrapper}>
         <Title />
@@ -56,10 +37,21 @@ class HomePage extends Component {
         ) : (
           <p>Loading...</p>
         )}
-        <UpDown value={page} onDown={this.pagePrev} onUp={this.pageNext} />
+        <UpDown />
       </div>
     );
   }
 }
+HomePage.propTypes = {
+  page: PropTypes.number.isRequired,
+  url: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+};
 
-export default HomePage;
+const mapStateToProps = state => ({
+  page: state.numberPage,
+  url: state.mainUrl,
+  type: state.type,
+});
+
+export default connect(mapStateToProps)(HomePage);

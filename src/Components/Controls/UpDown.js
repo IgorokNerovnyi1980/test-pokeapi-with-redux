@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './Controls.module.css';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import * as actions from '../../redux/actions';
 
 const UpDown = ({ value, onUp, onDown }) => {
   return (
@@ -21,4 +23,15 @@ UpDown.propTypes = {
   onDown: PropTypes.func.isRequired,
 };
 
-export default UpDown;
+const mapStateToProps = state => ({
+  value: state.numberPage,
+});
+const mapDispatchToProps = dispatch => ({
+  onUp: () => dispatch(actions.increment(1)),
+  onDown: () => dispatch(actions.decrement(1)),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(UpDown);

@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ec81e391989aa9da3cf7584d64ba25bb",
+    "revision": "5d4567df0f8b84513bfaa266f36cec5d",
     "url": "/test-pokeapi-with-redux/index.html"
   },
   {
-    "revision": "57c15eadbc7278f6e02c",
+    "revision": "487ee3b8a6b0fc003781",
     "url": "/test-pokeapi-with-redux/static/css/main.f9b9e1c5.chunk.css"
   },
   {
-    "revision": "0915603a036154e67cf1",
-    "url": "/test-pokeapi-with-redux/static/js/2.f964895e.chunk.js"
+    "revision": "cf84c4d2a4b7fcb156ff",
+    "url": "/test-pokeapi-with-redux/static/js/2.630db95b.chunk.js"
   },
   {
-    "revision": "57c15eadbc7278f6e02c",
-    "url": "/test-pokeapi-with-redux/static/js/main.f3b25053.chunk.js"
+    "revision": "487ee3b8a6b0fc003781",
+    "url": "/test-pokeapi-with-redux/static/js/main.7f8b94e4.chunk.js"
   },
   {
     "revision": "59b055659c33614f7a9c",

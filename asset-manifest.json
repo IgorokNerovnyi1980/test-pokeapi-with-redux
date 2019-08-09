@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/test-pokeapi-with-redux/static/css/main.f9b9e1c5.chunk.css",
-    "main.js": "/test-pokeapi-with-redux/static/js/main.7f8b94e4.chunk.js",
-    "main.js.map": "/test-pokeapi-with-redux/static/js/main.7f8b94e4.chunk.js.map",
+    "main.js": "/test-pokeapi-with-redux/static/js/main.1a082c6b.chunk.js",
+    "main.js.map": "/test-pokeapi-with-redux/static/js/main.1a082c6b.chunk.js.map",
     "runtime~main.js": "/test-pokeapi-with-redux/static/js/runtime~main.b13b41b4.js",
     "runtime~main.js.map": "/test-pokeapi-with-redux/static/js/runtime~main.b13b41b4.js.map",
     "static/js/2.630db95b.chunk.js": "/test-pokeapi-with-redux/static/js/2.630db95b.chunk.js",
     "static/js/2.630db95b.chunk.js.map": "/test-pokeapi-with-redux/static/js/2.630db95b.chunk.js.map",
     "index.html": "/test-pokeapi-with-redux/index.html",
-    "precache-manifest.481465f50611e250360783cff6c9796d.js": "/test-pokeapi-with-redux/precache-manifest.481465f50611e250360783cff6c9796d.js",
+    "precache-manifest.9c575974954e5980ecec4d43073de1b7.js": "/test-pokeapi-with-redux/precache-manifest.9c575974954e5980ecec4d43073de1b7.js",
     "service-worker.js": "/test-pokeapi-with-redux/service-worker.js",
     "static/css/main.f9b9e1c5.chunk.css.map": "/test-pokeapi-with-redux/static/css/main.f9b9e1c5.chunk.css.map"
   }
